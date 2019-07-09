@@ -47,9 +47,9 @@ const publishToMule = (req, res) => {
 app.post('/update', function (req, res) {
 
     // Publish the rows to mulesoft | mocking service
-    publishToMule(req, res);
+    //publishToMule(req, res);
 
-    /*
+    ///*
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         // watch for any connect issues
         if (err) console.log(err);
