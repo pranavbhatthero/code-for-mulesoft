@@ -1,7 +1,7 @@
 {
   "name": "Phone Change",
   "description": "Heroku Connect Sample App - Phone Change",
-  "repository": "https://github.com/pranavbhatthero/contact-update-with-mulesoft",
+  "repository": "https://github.com/pranavbhatthero/code-for-mulesoft",
   "success_url": "/setup.html",
   "env": {
     "PGSSLMODE": {
