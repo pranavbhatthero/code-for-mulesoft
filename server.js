@@ -46,8 +46,10 @@ const publishToMule = (req, res) => {
 
 app.post('/update', function (req, res) {
 
-    publishToMule(req, res);
-    /*
+    // Publish the rows to mulesoft | mocking service
+    //publishToMule(req, res);
+
+    ///*
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         // watch for any connect issues
         if (err) console.log(err);
@@ -64,24 +66,26 @@ app.post('/update', function (req, res) {
                                 res.status(400).json({ error: err.message });
                             }
                             else {
-                                publishToMule(req, res);
                                 // this will still cause jquery to display 'Record updated!'
                                 // eventhough it was inserted
                                 res.json(result);
+                                // Publish the rows to mulesoft | mocking service
+                                publishToMule(req, res);
+
                             }
                         });
                 }
                 else {
                     done();
-                    publishToMule(req, res);
                     res.json(result);
+                    // Publish the rows to mulesoft | mocking service
+                    publishToMule(req, res);
+
                 }
             }
         );
     });
     //*/
-
-
 
 });
 
