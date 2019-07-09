@@ -26,8 +26,10 @@ app.post('/update', function (req, res) {
     ///*
     // ———————— ADDED CODE ————————
     console.log(req.body);
-    fetch(new URL('mock', 'http://localhost:5000'), {
-    //fetch(new URL(‘api/Contact’, ‘http://costar.us-e2.cloudhub.io’), {
+    const baseUrl = process.env.MULESOFT_BASE_URL || 'http://localhost:5000';
+    const subUrl = process.env.MULESOFT_URL || 'mock';
+    console.log(baseUrl, subUrl);
+    fetch(new URL(subUrl, baseUrl), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
