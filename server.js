@@ -21,10 +21,9 @@ app.post('/mock', function (req, res) {
 // ———————— ADDED MOCKING SERVICE ————————  
 //*/
 
-app.post('/update', function (req, res) {
-
-    ///*
-    // ———————— ADDED CODE ————————
+///*
+// ———————— ADDED PUBLISH SERVICE ————————
+const publishToMule = (req, res) => {
     console.log(req.body);
     const baseUrl = process.env.MULESOFT_BASE_URL || 'http://localhost:5000';
     const subUrl = process.env.MULESOFT_URL || 'mock';
@@ -41,9 +40,13 @@ app.post('/update', function (req, res) {
     }).catch(err => { console.log(err); });
 
     res.status(200).send(req.body);
-    // ———————— ADDED CODE ———————— 
-    //*/
+}
+// ———————— ADDED PUBLISH SERVICE ————————
+//*/
 
+app.post('/update', function (req, res) {
+
+    publishToMule(req, res);
     /*
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         // watch for any connect issues
@@ -61,7 +64,7 @@ app.post('/update', function (req, res) {
                                 res.status(400).json({ error: err.message });
                             }
                             else {
-
+                                publishToMule(req, res);
                                 // this will still cause jquery to display 'Record updated!'
                                 // eventhough it was inserted
                                 res.json(result);
@@ -70,7 +73,7 @@ app.post('/update', function (req, res) {
                 }
                 else {
                     done();
-
+                    publishToMule(req, res);
                     res.json(result);
                 }
             }
