@@ -67,20 +67,25 @@ app.post('/update', function (req, res) {
                                 res.status(400).json({ error: err.message });
                             }
                             else {
+                                // Publish the rows to mulesoft | mocking service
+                                publishToMule(req, res);
+
                                 // this will still cause jquery to display 'Record updated!'
                                 // eventhough it was inserted
                                 res.json(result);
-                                // Publish the rows to mulesoft | mocking service
-                                publishToMule(req, res);
+                                
 
                             }
                         });
                 }
                 else {
+                    
                     done();
-                    res.json(result);
+                    
                     // Publish the rows to mulesoft | mocking service
                     publishToMule(req, res);
+
+                    res.json(result);
 
                 }
             }
