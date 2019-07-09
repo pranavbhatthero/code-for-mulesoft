@@ -30,7 +30,8 @@ const publishToMule = (req, res) => {
     console.log(baseUrl, subUrl);
     fetch(new URL(subUrl, baseUrl), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' , 'SFOverride': 'false'},
+        //headers: { 'Content-Type': 'application/json' , 'SFOverride': 'false'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             FirstName: req.body.firstName, LastName: req.body.lastName,
             Email: req.body.email, Phone: req.body.phone, DOB: '1990-01-01'
