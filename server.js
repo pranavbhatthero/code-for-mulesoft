@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 5000);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-///*
+/*
 // ———————— ADDED MOCKING SERVICE ————————
 app.post('/mock', function (req, res) {
     console.log('This goes to mulesoft -> ');
@@ -19,15 +19,15 @@ app.post('/mock', function (req, res) {
     res.status(200).send(req.body);
 });
 // ———————— ADDED MOCKING SERVICE ————————  
-//*/
+*/
 
 app.post('/update', function (req, res) {
 
-    ///*
+    /*
     // ———————— ADDED CODE ————————
     console.log(req.body);
     fetch(new URL('mock', 'http://localhost:5000'), {
-        //fetch(new URL(‘api/Contact’, ‘http://costar.us-e2.cloudhub.io’), {
+    //fetch(new URL(‘api/Contact’, ‘http://costar.us-e2.cloudhub.io’), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -40,9 +40,9 @@ app.post('/update', function (req, res) {
 
     res.status(200).send(req.body);
     // ———————— ADDED CODE ———————— 
-    //*/
+    */
 
-    /*
+    ///*
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         // watch for any connect issues
         if (err) console.log(err);
@@ -74,7 +74,7 @@ app.post('/update', function (req, res) {
             }
         );
     });
-    */
+    //*/
 
 
 
