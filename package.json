@@ -1,15 +1,16 @@
 {
   "name": "phone-change",
   "version": "0.0.0",
-  "description": "Heroku Connect Sample App - Phone Change",
+  "description": "Heroku Connect Sample App - For a company project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.13.1",
-    "body-parser": "^1.13.2",
-    "pg": "^4.4.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "pg": "^4.5.7"
   },
   "engines": {
     "node": "0.12.7"
