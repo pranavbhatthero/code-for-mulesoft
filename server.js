@@ -72,20 +72,20 @@ app.post('/update', function (req, res) {
 
                                 // this will still cause jquery to display 'Record updated!'
                                 // eventhough it was inserted
-                                res.json(result);
                                 
-
+                                //res.json(result);
+                                
                             }
                         });
                 }
                 else {
                     
                     done();
-                    
+
                     // Publish the rows to mulesoft | mocking service
                     publishToMule(req, res);
 
-                    res.json(result);
+                    //res.json(result);
 
                 }
             }
